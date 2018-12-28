@@ -10,7 +10,7 @@
 		$query = $conn->query($sql);
 
 		if($query->num_rows < 1){
-			$_SESSION['error'] = 'Cannot find account with the username';
+			$_SESSION['error'] = 'کاربری با این نام کاربری یافت نشد';
 		}
 		else{
 			$row = $query->fetch_assoc();
@@ -18,13 +18,13 @@
 				$_SESSION['admin'] = $row['id'];
 			}
 			else{
-				$_SESSION['error'] = 'Incorrect password';
+				$_SESSION['error'] = 'گذرواژه درست نیست';
 			}
 		}
 		
 	}
 	else{
-		$_SESSION['error'] = 'Input admin credentials first';
+		$_SESSION['error'] = 'اطلاعات کاربر را وارد کنید';
 	}
 
 	header('location: index.php');

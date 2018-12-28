@@ -20,12 +20,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Book List
+        لیست کتاب ها
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li>Books</li>
-        <li class="active">Book List</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> خانه</a></li>
+        <li>کتابها</li>
+        <li class="active">لیست کتاب ها</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -35,7 +35,7 @@
           echo "
             <div class='alert alert-danger alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-warning'></i> Error!</h4>
+              <h4><i class='icon fa fa-warning'></i> ارور!</h4>
               ".$_SESSION['error']."
             </div>
           ";
@@ -45,7 +45,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> موفقیت!</h4>
               ".$_SESSION['success']."
             </div>
           ";
@@ -56,13 +56,13 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> جدید</a>
               <div class="box-tools pull-right">
                 <form class="form-inline">
                   <div class="form-group">
-                    <label>Category: </label>
+                    <label>دسته: </label>
                     <select class="form-control input-sm" id="select_category">
-                      <option value="0">ALL</option>
+                      <option value="0">همه</option>
                       <?php
                         $sql = "SELECT * FROM category";
                         $query = $conn->query($sql);
@@ -81,13 +81,13 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Category</th>
+                  <th>دسته</th>
                   <th>ISBN</th>
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>Publisher</th>
-                  <th>Status</th>
-                  <th>Tools</th>
+                  <th>نام</th>
+                  <th>نویسنده</th>
+                  <th>ناشر</th>
+                  <th>وضعیت</th>
+                  <th>ابزار</th>
                 </thead>
                 <tbody>
                   <?php
@@ -95,10 +95,10 @@
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       if($row['status']){
-                        $status = '<span class="label label-danger">borrowed</span>';
+                        $status = '<span class="label label-danger">امانت داده شد</span>';
                       }
                       else{
-                        $status = '<span class="label label-success">available</span>';
+                        $status = '<span class="label label-success">موجود</span>';
                       }
                       echo "
                         <tr>
@@ -109,8 +109,8 @@
                           <td>".$row['publisher']."</td>
                           <td>".$status."</td>
                           <td>
-                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['bookid']."'><i class='fa fa-edit'></i> Edit</button>
-                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['bookid']."'><i class='fa fa-trash'></i> Delete</button>
+                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['bookid']."'><i class='fa fa-edit'></i> تغیر</button>
+                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['bookid']."'><i class='fa fa-trash'></i> حذف</button>
                           </td>
                         </tr>
                       ";
@@ -125,7 +125,6 @@
     </section>   
   </div>
     
-  <?php include 'includes/footer.php'; ?>
   <?php include 'includes/book_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
@@ -148,7 +147,7 @@ $(function(){
     getRow(id);
   });
 
-  $(document).on('click', '.edit', function(e){
+  $(document).on('click', '.delete', function(e){
     e.preventDefault();
     $('#delete').modal('show');
     var id = $(this).data('id');

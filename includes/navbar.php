@@ -2,7 +2,6 @@
   <nav class="navbar navbar-static-top">
     <div class="container">
       <div class="navbar-header">
-        <a href="#" class="navbar-brand"><b>Source</b>CodeSter</a>
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
           <i class="fa fa-bars"></i>
         </button>
@@ -14,8 +13,8 @@
           <?php
             if(isset($_SESSION['student'])){
               echo "
-                <li><a href='index.php'>HOME</a></li>
-                <li><a href='transaction.php'>TRANSACTION</a></li>
+                <li><a href='index.php'>خانه</a></li>
+                <li><a href='transaction.php'>تاریخچه</a></li>
               ";
             } 
           ?>
@@ -35,12 +34,12 @@
                     <span class='hidden-xs'>".$student['firstname'].' '.$student['lastname']."</span>
                   </a>
                 </li>
-                <li><a href='logout.php'><i class='fa fa-sign-out'></i> LOGOUT</a></li>
+                <li><a href='logout.php'><i class='fa fa-sign-out'></i> خروج</a></li>
               ";
             }
             else{
               echo "
-                <li><a href='#login' data-toggle='modal'><i class='fa fa-sign-in'></i> LOGIN</a></li>
+                <li><a href='#login' data-toggle='modal'><i class='fa fa-sign-in'></i> ورود</a></li>
               ";
             } 
           ?>

@@ -8,14 +8,14 @@
 
 		$sql = "UPDATE course SET code = '$code', title = '$title' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Course updated successfully';
+			$_SESSION['success'] = 'رشته تحصیلی با موفقیت تغیر یافت';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Fill up edit form first';
+		$_SESSION['error'] = 'فیلد هارا پر کنید';
 	}
 
 	header('location:course.php');

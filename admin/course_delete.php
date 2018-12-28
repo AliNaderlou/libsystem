@@ -5,14 +5,14 @@
 		$id = $_POST['id'];
 		$sql = "DELETE FROM course WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Course deleted successfully';
+			$_SESSION['success'] = 'رشته تحصیلی با موفقیت حذف شد';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Select item to delete first';
+		$_SESSION['error'] = 'رشته تحصیلی را انتخاب کنید';
 	}
 
 	header('location: course.php');

@@ -7,25 +7,25 @@
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition login-page">
 <div class="login-box">
+	  <b>سیستم مدیریت کتابخانه</b>
   	<div class="login-logo">
-  		<b>SourceCodeSter</b>
   	</div>
   
   	<div class="login-box-body">
-    	<p class="login-box-msg">Sign in to start your session</p>
+    	<p class="login-box-msg">وارد شوید تا به اطلاعات دسترسی داشته باشید</p>
 
     	<form action="login.php" method="POST">
       		<div class="form-group has-feedback">
-        		<input type="text" class="form-control" name="username" placeholder="input Username" required autofocus>
+        		<input type="text" class="form-control" name="username" placeholder="نام کاربری" required autofocus>
         		<span class="glyphicon glyphicon-user form-control-feedback"></span>
       		</div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="password" placeholder="input Password" required>
+            <input type="password" class="form-control" name="password" placeholder="گذرواژه" required>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
       		<div class="row">
     			<div class="col-xs-4">
-          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i class="fa fa-sign-in"></i> Sign In</button>
+          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i class="fa fa-sign-in"></i> ورود</button>
         		</div>
       		</div>
     	</form>

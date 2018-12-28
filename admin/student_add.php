@@ -22,7 +22,7 @@
 		//
 		$sql = "INSERT INTO students (student_id, firstname, lastname, course_id, photo, created_on) VALUES ('$student_id', '$firstname', '$lastname', '$course', '$filename', NOW())";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Student added successfully';
+			$_SESSION['success'] = 'دانشجو با موفقیت اضافه شد';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
@@ -30,7 +30,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Fill up add form first';
+		$_SESSION['error'] = 'فیلدهارا پر کنید';
 	}
 
 	header('location: student.php');

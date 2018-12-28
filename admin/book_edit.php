@@ -12,14 +12,14 @@
 
 		$sql = "UPDATE books SET isbn = '$isbn', title = '$title', category_id = '$category', author = '$author', publisher = '$publisher', publish_date = '$pub_date' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Book updated successfully';
+			$_SESSION['success'] = 'اطلاعات کتاب با موفقیت تغیر پیدا کرد';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Fill up edit form first';
+		$_SESSION['error'] = 'تمامی فیلد ها را پر کنید';
 	}
 
 	header('location:book.php');

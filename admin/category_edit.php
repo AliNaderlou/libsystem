@@ -7,14 +7,14 @@
 
 		$sql = "UPDATE category SET name = '$name' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Category updated successfully';
+			$_SESSION['success'] = 'دسته با موفقیت تغیر یافت';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Fill up edit form first';
+		$_SESSION['error'] = 'تمامی فیلد هارا پر کنید';
 	}
 
 	header('location:category.php');

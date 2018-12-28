@@ -13,46 +13,46 @@
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">REPORTS</li>
-      <li class=""><a href="home.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <li class="header">MANAGE</li>
+      <li class="header">گزارشات</li>
+      <li class=""><a href="home.php"><i class="fa fa-dashboard"></i> <span>داشبورد</span></a></li>
+      <li class="header">مدیریت</li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-refresh"></i>
-          <span>Transaction</span>
+          <span>امانت/تحویل</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="borrow.php"><i class="fa fa-circle-o"></i> Borrow</a></li>
-          <li><a href="return.php"><i class="fa fa-circle-o"></i> Return</a></li>
+          <li><a href="borrow.php"><i class="fa fa-circle-o"></i> امانت</a></li>
+          <li><a href="return.php"><i class="fa fa-circle-o"></i> تحویل</a></li>
         </ul>
       </li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-book"></i>
-          <span>Books</span>
+          <span>کتاب ها</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="book.php"><i class="fa fa-circle-o"></i> Book List</a></li>
-          <li><a href="category.php"><i class="fa fa-circle-o"></i> Category</a></li>
+          <li><a href="book.php"><i class="fa fa-circle-o"></i> لیست کتاب ها</a></li>
+          <li><a href="category.php"><i class="fa fa-circle-o"></i> دسته ها</a></li>
         </ul>
       </li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-graduation-cap"></i>
-          <span>Students</span>
+          <span>دانشجویان</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="student.php"><i class="fa fa-circle-o"></i> Student List</a></li>
-          <li><a href="course.php"><i class="fa fa-circle-o"></i> Course</a></li>
+          <li><a href="student.php"><i class="fa fa-circle-o"></i> لیست دانشجویان</a></li>
+          <li><a href="course.php"><i class="fa fa-circle-o"></i> رشته های تحصیلی</a></li>
         </ul>
       </li>
     </ul>

@@ -2,15 +2,15 @@
   <!-- Logo -->
   <a href="#" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>S</b>CS</span>
+    <span class="logo-mini"><b>S</b>MK</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Source</b>CodeSter</span>
+    <span class="logo-lg">پنل مدیریت<b>کتابخانه</b></span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">
     <!-- Sidebar toggle button-->
     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-      <span class="sr-only">Toggle navigation</span>
+      <span class="sr-only">بستن منو</span>
     </a>
 
     <div class="navbar-custom-menu">
@@ -28,15 +28,15 @@
 
               <p>
                 <?php echo $user['firstname'].' '.$user['lastname']; ?>
-                <small>Member since <?php echo date('M. Y', strtotime($user['created_on'])); ?></small>
+                <small>عضو از <?php echo date('M. Y', strtotime($user['created_on'])); ?></small>
               </p>
             </li>
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">Update</a>
+                <a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">تغیر</a>
               </div>
               <div class="pull-right">
-                <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                <a href="logout.php" class="btn btn-default btn-flat">خروج</a>
               </div>
             </li>
           </ul>

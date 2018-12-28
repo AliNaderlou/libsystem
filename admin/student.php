@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Student List
+        لیست دانشجویان
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li>Students</li>
-        <li class="active">Student List</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> خانه</a></li>
+        <li>دانشجویان</li>
+        <li class="active">لیست دانشجویان</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -36,7 +36,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> عملیات موفق!</h4>
               ".$_SESSION['success']."
             </div>
           ";
@@ -47,17 +47,17 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> جدید</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Course</th>
-                  <th>Photo</th>
-                  <th>Student ID</th>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Tools</th>
+                  <th>رشته تحصیلی</th>
+                  <th>تصویر</th>
+                  <th>شماره دانشجویی</th>
+                  <th>نام</th>
+                  <th>نام خانوادگی</th>
+                  <th>ابزارها</th>
                 </thead>
                 <tbody>
                   <?php
@@ -76,8 +76,8 @@
                           <td>".$row['firstname']."</td>
                           <td>".$row['lastname']."</td>
                           <td>
-                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['studid']."'><i class='fa fa-edit'></i> Edit</button>
-                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['studid']."'><i class='fa fa-trash'></i> Delete</button>
+                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['studid']."'><i class='fa fa-edit'></i> تغیر</button>
+                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['studid']."'><i class='fa fa-trash'></i> حذف</button>
                           </td>
                         </tr>
                       ";
@@ -92,7 +92,6 @@
     </section>   
   </div>
     
-  <?php include 'includes/footer.php'; ?>
   <?php include 'includes/student_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>

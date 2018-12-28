@@ -10,7 +10,7 @@
 			if(!isset($_SESSION['error'])){
 				$_SESSION['error'] = array();
 			}
-			$_SESSION['error'][] = 'Student not found';
+			$_SESSION['error'][] = 'دانشجویی یافت نشد';
 		}
 		else{
 			$row = $query->fetch_assoc();
@@ -49,7 +49,7 @@
 							if(!isset($_SESSION['error'])){
 								$_SESSION['error'] = array();
 							}
-							$_SESSION['error'][] = 'Borrow details not found: ISBN - '.$isbn.', Student ID: '.$student;
+							$_SESSION['error'][] = 'اطلاعات امانت یافت نشد: ISBN - '.$isbn.', شماره دانشجویی: '.$student;
 						}
 
 						
@@ -59,21 +59,21 @@
 						if(!isset($_SESSION['error'])){
 							$_SESSION['error'] = array();
 						}
-						$_SESSION['error'][] = 'Book not found: ISBN - '.$isbn;
+						$_SESSION['error'][] = 'کتاب یافت نشد: ISBN - '.$isbn;
 					}
 		
 				}
 			}
 
 			if($return > 0){
-				$book = ($return == 1) ? 'Book' : 'Books';
-				$_SESSION['success'] = $return.' '.$book.' successfully returned';
+				$book = ($return == 1) ? 'کتاب' : 'کتاب';
+				$_SESSION['success'] = $return.' '.$book.' با موفقیت تحویل داده شد';
 			}
 
 		}
 	}	
 	else{
-		$_SESSION['error'] = 'Fill up add form first';
+		$_SESSION['error'] = 'فیلد هارا پر کنید';
 	}
 
 	header('location: return.php');

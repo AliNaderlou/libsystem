@@ -5,7 +5,7 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Add New Book</b></h4>
+            	<h4 class="modal-title"><b>اضافه کردن کتاب</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="book_add.php">
@@ -17,15 +17,14 @@
                   	</div>
                 </div>
                 <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label">Title</label>
+                    <label for="title" class="col-sm-3 control-label">عنوان</label>
 
                     <div class="col-sm-9">
                       <textarea class="form-control" name="title" id="title" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="category" class="col-sm-3 control-label">Category</label>
-
+                    <label for="category" class="col-sm-3 control-label">دسته</label>
                     <div class="col-sm-9">
                       <select class="form-control" name="category" id="category" required>
                         <option value="" selected>- Select -</option>
@@ -42,21 +41,21 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="author" class="col-sm-3 control-label">Author</label>
+                    <label for="author" class="col-sm-3 control-label">نویسنده</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="author" name="author">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="publisher" class="col-sm-3 control-label">Publisher</label>
+                    <label for="publisher" class="col-sm-3 control-label">ناشر</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="publisher" name="publisher">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="datepicker_add" class="col-sm-3 control-label">Publish Date</label>
+                    <label for="datepicker_add" class="col-sm-3 control-label">تاریخ نشر</label>
 
                     <div class="col-sm-9">
                       <div class="date">
@@ -66,8 +65,8 @@
                 </div>
           	</div>
           	<div class="modal-footer">
-            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-            	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
+            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> بستن</button>
+            	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> ذخیره</button>
             	</form>
           	</div>
         </div>
@@ -81,7 +80,7 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Edit Book</b></h4>
+            	<h4 class="modal-title"><b>تغیر اطلاعات کتاب</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="book_edit.php">
@@ -94,14 +93,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_title" class="col-sm-3 control-label">Title</label>
+                    <label for="edit_title" class="col-sm-3 control-label">عنوان</label>
 
                     <div class="col-sm-9">
                       <textarea class="form-control" name="title" id="edit_title"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="category" class="col-sm-3 control-label">Category</label>
+                    <label for="category" class="col-sm-3 control-label">دسته</label>
 
                     <div class="col-sm-9">
                       <select class="form-control" name="category" id="category">
@@ -119,21 +118,21 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_author" class="col-sm-3 control-label">Author</label>
+                    <label for="edit_author" class="col-sm-3 control-label">نویسنده</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_author" name="author">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_publisher" class="col-sm-3 control-label">Publisher</label>
+                    <label for="edit_publisher" class="col-sm-3 control-label">ناشر</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_publisher" name="publisher">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="datepicker_edit" class="col-sm-3 control-label">Publish Date</label>
+                    <label for="datepicker_edit" class="col-sm-3 control-label">تاریخ نشر</label>
 
                     <div class="col-sm-9">
                       <div class="date">
@@ -143,8 +142,8 @@
                 </div>
           	</div>
           	<div class="modal-footer">
-            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-            	<button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
+            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> بستن</button>
+            	<button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> تغیر</button>
             	</form>
           	</div>
         </div>
@@ -158,19 +157,19 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Deleting...</b></h4>
+            	<h4 class="modal-title"><b>در حال حذف...</b></h4>
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="book_delete.php">
             		<input type="hidden" class="bookid" name="id">
             		<div class="text-center">
-	                	<p>DELETE BOOK</p>
+	                	<p>حذف کتاب</p>
 	                	<h2 id="del_book" class="bold"></h2>
 	            	</div>
           	</div>
           	<div class="modal-footer">
-            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-            	<button type="submit" class="btn btn-danger btn-flat" name="delete"><i class="fa fa-trash"></i> Delete</button>
+            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> بستن</button>
+            	<button type="submit" class="btn btn-danger btn-flat" name="delete"><i class="fa fa-trash"></i> حذف</button>
             	</form>
           	</div>
         </div>

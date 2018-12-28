@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Borrow Books
+        امانت کتاب
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li>Transaction</li>
-        <li class="active">Borrow</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> خانه</a></li>
+        <li>امانت/تحویل</li>
+        <li class="active">امانت</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -26,7 +26,7 @@
           ?>
             <div class="alert alert-danger alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <h4><i class="icon fa fa-warning"></i> Error!</h4>
+              <h4><i class="icon fa fa-warning"></i>خطا !</h4>
                 <ul>
                 <?php
                   foreach($_SESSION['error'] as $error){
@@ -45,7 +45,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> عملیات موفق !</h4>
               ".$_SESSION['success']."
             </div>
           ";
@@ -56,18 +56,18 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Borrow</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> امانت گرفتن</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th class="hidden"></th>
-                  <th>Date</th>
-                  <th>Student ID</th>
-                  <th>Name</th>
+                  <th>تاریخ</th>
+                  <th>شماره دانشجویی</th>
+                  <th>نام</th>
                   <th>ISBN</th>
-                  <th>Title</th>
-                  <th>Status</th>
+                  <th>عنوان</th>
+                  <th>وضغیت</th>
                 </thead>
                 <tbody>
                   <?php
@@ -75,10 +75,10 @@
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       if($row['barstat']){
-                        $status = '<span class="label label-success">returned</span>';
+                        $status = '<span class="label label-success">تحویل داده شده</span>';
                       }
                       else{
-                        $status = '<span class="label label-danger">not returned</span>';
+                        $status = '<span class="label label-danger">مانت داده شده</span>';
                       }
                       echo "
                         <tr>
@@ -102,7 +102,6 @@
     </section>   
   </div>
     
-  <?php include 'includes/footer.php'; ?>
   <?php include 'includes/borrow_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>

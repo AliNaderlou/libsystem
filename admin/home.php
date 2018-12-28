@@ -19,11 +19,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
+        داشبورد
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> خانه</a></li>
+        <li class="active">داشبورد</li>
       </ol>
     </section>
 
@@ -44,7 +44,7 @@
           echo "
             <div class='alert alert-success alert-dismissible'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-              <h4><i class='icon fa fa-check'></i> Success!</h4>
+              <h4><i class='icon fa fa-check'></i> عملیات موفق!</h4>
               ".$_SESSION['success']."
             </div>
           ";
@@ -64,12 +64,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p>Total Books</p>
+              <p>تعداد کل کتاب ها</p>
             </div>
             <div class="icon">
               <i class="fa fa-book"></i>
             </div>
-            <a href="book.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="book.php" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -84,12 +84,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
           
-              <p>Total Students</p>
+              <p>تعداد کلی دانشجویان</p>
             </div>
             <div class="icon">
               <i class="fa fa-graduation-cap"></i>
             </div>
-            <a href="student.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="student.php" class="small-box-footer">اطلاعات بیشتر<i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -104,12 +104,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
              
-              <p>Returned Today</p>
+              <p>تحویل گرفته شده های امروز</p>
             </div>
             <div class="icon">
               <i class="fa fa-mail-reply"></i>
             </div>
-            <a href="return.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="return.php" class="small-box-footer">اطلاعات <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -124,12 +124,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p>Borrowed Today</p>
+              <p>امانت داده شده های امروز</p>
             </div>
             <div class="icon">
               <i class="fa fa-mail-forward"></i>
             </div>
-            <a href="borrow.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="borrow.php" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -139,14 +139,14 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Monthly Transaction Report</h3>
+              <h3 class="box-title">گزارش تحویل/امانت ماهانه</h3>
               <div class="box-tools pull-right">
                 <form class="form-inline">
                   <div class="form-group">
-                    <label>Select Year: </label>
+                    <label>سال : </label>
                     <select class="form-control input-sm" id="select_year">
                       <?php
-                        for($i=2015; $i<=2065; $i++){
+                        for($i=2018; $i<=2065; $i++){
                           $selected = ($i==$year)?'selected':'';
                           echo "
                             <option value='".$i."' ".$selected.">".$i."</option>
@@ -172,7 +172,6 @@
       </section>
       <!-- right col -->
     </div>
-  	<?php include 'includes/footer.php'; ?>
 
 </div>
 <!-- ./wrapper -->
@@ -212,7 +211,7 @@ $(function(){
     labels  : <?php echo $months; ?>,
     datasets: [
       {
-        label               : 'Borrow',
+        label               : 'امانت',
         fillColor           : 'rgba(210, 214, 222, 1)',
         strokeColor         : 'rgba(210, 214, 222, 1)',
         pointColor          : 'rgba(210, 214, 222, 1)',
@@ -222,7 +221,7 @@ $(function(){
         data                : <?php echo $borrow; ?>
       },
       {
-        label               : 'Return',
+        label               : 'تحویل',
         fillColor           : 'rgba(60,141,188,0.9)',
         strokeColor         : 'rgba(60,141,188,0.8)',
         pointColor          : '#3b8bba',
