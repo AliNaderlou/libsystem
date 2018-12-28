@@ -183,24 +183,32 @@
   $return = array();
   $borrow = array();
   for( $m = 1; $m <= 12; $m++ ) {
-    $sql = "SELECT * FROM returns WHERE MONTH(date_return) = '$m' AND YEAR(date_return) = '$year'";
+    if($m>=2 && $m<=10){
+      $mm=$m+2;
+    }elseif($m<=2){
+      $mm=$m+10;
+    }elseif($m>=10){
+      $mm=$m-10;
+    }
+    echo $mm;
+    $sql = "SELECT * FROM returns WHERE MONTH(date_return) = '$mm' AND YEAR(date_return) = '$year'";
     $rquery = $conn->query($sql);
     array_push($return, $rquery->num_rows);
 
-    $sql = "SELECT * FROM borrow WHERE MONTH(date_borrow) = '$m' AND YEAR(date_borrow) = '$year'";
+    $sql = "SELECT * FROM borrow WHERE MONTH(date_borrow) = '$mm' AND YEAR(date_borrow) = '$year'";
     $bquery = $conn->query($sql);
     array_push($borrow, $bquery->num_rows);
-
-    $num = str_pad( $m, 2, 0, STR_PAD_LEFT );
-    $month =  date('M', mktime(0, 0, 0, $m, 1));
+    
+    $num = str_pad(  $mm, 2, 0, STR_PAD_LEFT );
+    $month =  date('M', mktime(0, 0, 0,  $mm, 1));
     array_push($months, $month);
   }
 
   $months = json_encode($months);
   $return = json_encode($return);
   $borrow = json_encode($borrow);
-
 ?>
+
 <!-- End Chart Data -->
 <?php include 'includes/scripts.php'; ?>
 <script>
@@ -208,7 +216,7 @@ $(function(){
   var barChartCanvas = $('#barChart').get(0).getContext('2d')
   var barChart = new Chart(barChartCanvas)
   var barChartData = {
-    labels  : <?php echo $months; ?>,
+    labels  :['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','ابان','اذر','دی','بهمن','اسفند'],
     datasets: [
       {
         label               : 'امانت',
