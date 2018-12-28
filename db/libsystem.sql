@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 05, 2018 at 02:02 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.1.15
+-- Host: localhost:3306
+-- Generation Time: Dec 28, 2018 at 01:12 PM
+-- Server version: 5.7.24-0ubuntu0.18.04.1
+-- PHP Version: 7.2.13-1+ubuntu18.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -59,7 +57,7 @@ CREATE TABLE `books` (
   `author` varchar(150) NOT NULL,
   `publisher` varchar(150) NOT NULL,
   `publish_date` date NOT NULL,
-  `status` int(1) NOT NULL
+  `status` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -67,8 +65,9 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `isbn`, `category_id`, `title`, `author`, `publisher`, `publish_date`, `status`) VALUES
-(1, 'testisbn12345', 1, 'Sample Title', 'Sample Author', 'My Printers', '2018-05-21', 1),
-(2, 'bookisbntest', 2, 'This is a Sample Title of a Sample Book', 'Author Me', 'Self Publish Inc', '2018-05-02', 0);
+(13, '9789863182085', 5, 'Ù‚Ù„Ø¹Ù‡ Ø­ÛŒÙˆØ§Ù†Ø§Øª', ' Ø¬ÙˆØ±Ø¬ Ø§ÙˆØ±ÙˆÙ„ ', 'Ø§Ù†ØªØ´Ø§Ø±Ø§Øª Ø¬Ø§Ù…ÛŒ', '1980-06-17', 0),
+(14, '9785699661121', 5, 'Ù†Ø§ØªÙˆØ± Ø¯Ø´Øª', ' Ø¬Ø±ÙˆÙ… Ø¯ÛŒÙˆÛŒØ¯ Ø³Ø§Ù„ÛŒÙ†Ø¬Ø±', 'Ø§Ù†ØªØ´Ø§Ø±Ø§Øª ØµØ¯Ø±Ø§', '1936-08-12', 0),
+(15, '9789863182077', 1, 'Ø¨Ø±Ù†Ø§Ù…Ù‡ Ù†ÙˆÛŒØ³ÛŒ Ø¨Ù‡ Ø²Ø¨Ø§Ù† PHP', ' Ø­Ù…ÛŒØ¯Ø±Ø¶Ø§ Ø·Ø§Ù„Ø¨ÛŒ', ' Ù…Ø¤Ø³Ø³Ù‡ ÙØ±Ù‡Ù†Ú¯ÛŒ Ù‡Ù†Ø±ÛŒ Ø¯ÛŒØ¨Ø§Ú¯Ø±Ø§Ù† ØªÙ‡Ø±Ø§Ù† ', '2009-12-17', 0);
 
 -- --------------------------------------------------------
 
@@ -81,7 +80,7 @@ CREATE TABLE `borrow` (
   `student_id` int(11) NOT NULL,
   `book_id` int(11) NOT NULL,
   `date_borrow` date NOT NULL,
-  `status` int(1) NOT NULL
+  `status` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -89,10 +88,9 @@ CREATE TABLE `borrow` (
 --
 
 INSERT INTO `borrow` (`id`, `student_id`, `book_id`, `date_borrow`, `status`) VALUES
-(15, 3, 1, '2018-05-04', 1),
-(16, 3, 2, '2018-05-04', 1),
-(17, 3, 1, '2018-05-04', 0),
-(18, 3, 2, '2018-05-04', 1);
+(19, 5, 14, '2018-12-28', 1),
+(20, 5, 14, '2018-12-28', 1),
+(21, 5, 14, '2018-12-28', 1);
 
 -- --------------------------------------------------------
 
@@ -110,10 +108,11 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Engineering'),
-(2, 'Mathematics'),
-(3, 'Science and Technology'),
-(4, 'History');
+(1, 'Ù…Ù‡Ù†Ø¯Ø³ÛŒ'),
+(2, 'Ø±ÛŒØ§Ø¶ÛŒ'),
+(3, 'Ø¹Ù„Ù…ÛŒ Ùˆ ØªÚ©Ù†ÙˆÙ„ÙˆÚ˜ÛŒ'),
+(4, 'ØªØ§Ø±ÛŒØ®ÛŒ'),
+(5, 'Ø±Ù…Ø§Ù†');
 
 -- --------------------------------------------------------
 
@@ -132,8 +131,12 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`id`, `title`, `code`) VALUES
-(1, 'Bachelor of Science in Information Systems', 'BSIS'),
-(2, 'Bachelor of Science in Computer Science', 'BSCS');
+(3, 'Ú©Ø§Ù…Ù¾ÙŠÙˆØªØ± - Ù†Ø±Ù… Ø§ÙØ²Ø§Ø± Ú©Ø§Ù…Ù¾ÙŠÙˆØªØ±', '41022'),
+(4, 'Ù…Ù‡Ù†Ø¯Ø³ÛŒ Ø´Ù‡Ø±Ø³Ø§Ø²ÙŠ', '60205'),
+(5, 'Ù…Ø¯ÛŒØ±ÛŒØª Ø¨Ø§Ø²Ø±Ú¯Ø§Ù†ÛŒ', '21207'),
+(6, 'Ø­Ø³Ø§Ø¨Ø¯Ø§Ø±ÙŠ', '21301'),
+(7, 'Ù…Ù‡Ù†Ø¯Ø³ÛŒ Ø´ÙŠÙ…ÛŒ', '40201'),
+(8, 'ØªØ±Ø¨ÙŠØª Ø¨Ø¯Ù†ÛŒ ÙˆØ¹Ù„ÙˆÙ… ÙˆØ±Ø²Ø´ÛŒ', '21402');
 
 -- --------------------------------------------------------
 
@@ -153,10 +156,9 @@ CREATE TABLE `returns` (
 --
 
 INSERT INTO `returns` (`id`, `student_id`, `book_id`, `date_return`) VALUES
-(1, 3, 2, '2018-05-04'),
-(2, 3, 1, '2018-05-04'),
-(3, 3, 2, '2018-05-04'),
-(4, 3, 2, '2018-05-04');
+(5, 5, 14, '2018-12-28'),
+(6, 5, 14, '2018-12-28'),
+(7, 5, 14, '2018-12-28');
 
 -- --------------------------------------------------------
 
@@ -179,8 +181,9 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `student_id`, `firstname`, `lastname`, `photo`, `course_id`, `created_on`) VALUES
-(3, 'IMU702639514', 'Neovic', 'Devierte', 'facebook-profile-image.jpeg', 1, '2018-05-04'),
-(4, 'TBD917438625', 'Gemalyn', 'Cepe', '', 2, '2018-05-04');
+(5, 'ERZ437906825', 'Ø¹Ù„ÛŒ', 'Ù†Ø§Ø¯Ø±Ù„Ùˆ', '', 3, '2018-12-28'),
+(6, 'RFC753689241', 'Ø­Ø³ÛŒÙ†', 'Ú©Ø±ÛŒÙ…ÛŒ', '', 6, '2018-12-28'),
+(7, 'LQU843512679', 'Ø§Ø­Ø³Ø§Ù†', 'ØµÙÙˆÛŒ', '', 8, '2018-12-28');
 
 --
 -- Indexes for dumped tables
@@ -237,44 +240,36 @@ ALTER TABLE `students`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `borrow`
 --
 ALTER TABLE `borrow`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `returns`
 --
 ALTER TABLE `returns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
